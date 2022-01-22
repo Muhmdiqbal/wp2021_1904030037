@@ -1,18 +1,18 @@
-<?php
-$conn = mysqli_connect('localhost', 'root', '', 'wpsmt5');
+<<?php
+$conn = mysqli_connect('localhost','root','','wpsmt5');
 
-// pemanggilan tabel
+//pemanggilan tabel
 function query($query)
 {
-  global $conn;
+    global $conn;
 
-  // mengambil seluruh data pada tabel
-  $result = mysqli_query($conn, $query);
+    //mengambil seluruh data
+    $result = mysqli_query($conn, $query);
 
-  // pemanggilan data elemen dengan rapih
-  $rows = [];
-  while ($row = mysqli_fetch_assoc($result)) {
-    $rows[] = $row;
-  }
-  return $rows;
+    //pemanggilan elemen data dengan rapih
+    $rows = [];
+    while ($row =mysqli_fetch_assoc($result)){
+        $rows[] = $row;
+    }
+    return $rows;
 }
